@@ -1,0 +1,34 @@
+#
+# system.prop for device
+#
+
+rild.libpath=/system/lib/libhtc_ril.so
+ro.ril.def.preferred.network = 4
+ro.telephony.default_network = 4
+wifi.interface = eth0
+wifi.supplicant_scan_interval=45
+ro.com.android.dataroaming = true
+ro.com.google.locationfeatures = 1
+# density in DPI of the LCD of this board. This is used to scale the UI
+# appropriately. If this property is not defined, the default value is 160 dpi.
+ro.sf.lcd_density = 240
+# ro.sf.lcd_density = 160
+
+# For SD storage insert notification sound
+persist.service.mount.playsnd = 0
+
+# For the agps default value
+ro.ril.def.agps.mode = 2
+
+# For auto backlight default value
+settings.display.autobacklight=1
+
+# default value of brightness
+settings.display.brightness=143
+
+# For emmc phone storage
+ro.phone_storage = 1
+
+# This is a high density device with more memory, so larger vm heaps for it.
+dalvik.vm.heapsize=24m
+
