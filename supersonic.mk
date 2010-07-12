@@ -21,6 +21,13 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
+# Kernel Targets
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+ifeq ($(TARGET_KERNEL_CONFIG),)
+TARGET_PREBUILT_KERNEL := device/htc/supersonic/kernel
+endif # TARGET_KERNEL_CONFIG
+endif # TARGET_PREBUILT_KERNEL
+
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
@@ -78,15 +85,6 @@ PRODUCT_LOCALES += hdpi
 PRODUCT_COPY_FILES += \
     device/htc/supersonic/vold.fstab:system/etc/vold.fstab \
     device/htc/supersonic/apns-conf.xml:system/etc/apns-conf.xml
-
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/htc/supersonic/kernel
-else
-LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
 
 PRODUCT_COPY_FILES += \
     device/htc/supersonic/bcm4329.ko:system/lib/modules/bcm4329.ko \
