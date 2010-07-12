@@ -65,8 +65,6 @@ BOARD_VENDOR_USE_AKMD := akm8973
 
 BOARD_EGL_CFG := device/htc/supersonic/egl.cfg
 
-BOARD_USES_ECLAIR_LIBCAMERA := true
-
 # # cat /proc/mtd
 # dev:    size   erasesize  name
 # mtd0: 00c00000 00020000 "wimax"
