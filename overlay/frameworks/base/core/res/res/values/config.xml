@@ -179,4 +179,9 @@
     <integer-array name="config_keyboardTapVibePattern">
         <item>30</item>
     </integer-array>
+
+    <!-- Component name of the default wallpaper. This will be ImageWallpaper if not 
+         specified -->
+    <string name="default_wallpaper_component">com.android.wallpaper/.nexus.NexusWallpaper</string>
+
 </resources>
