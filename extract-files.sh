@@ -21,11 +21,8 @@ mkdir -p ../../../vendor/htc/$DEVICE/proprietary
 # This needs to be removed once .32 kernel is ported.
 adb pull /system/lib/hw/gralloc.qsd8k.so ../../../vendor/htc/$DEVICE/proprietary
 
+adb pull /system/lib/hw/lights.qsd8k.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/akmd ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/bin/awb_camera ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/bin/bma150_usr ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/bin/cam_ins_spmo ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/bin/debug_tool ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/snd ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/snd8k ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/sound8k ../../../vendor/htc/$DEVICE/proprietary
@@ -84,6 +81,10 @@ adb pull /system/lib/libspeech.so ../../../vendor/htc/$DEVICE/proprietary
 # This needs to be removed once .32 kernel is ported.
 PRODUCT_COPY_FILES := \\
     vendor/htc/__DEVICE__/proprietary/gralloc.qsd8k.so:/system/lib/hw/gralloc.qsd8k.so
+
+# An opensource version of this needs created for Supersonic
+PRODUCT_COPY_FILES := \\
+    vendor/htc/__DEVICE__/proprietary/lights.qsd8k.so:/system/lib/hw/lights.qsd8k.so
 
 # Prebuilt libraries that are needed to build open-source libraries
 PRODUCT_COPY_FILES += \\
