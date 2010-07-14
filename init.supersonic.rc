@@ -35,8 +35,8 @@ on boot
     chmod 0660 /sys/class/rfkill/rfkill0/state
 
     # bluetooth MAC address programming
-    chown bluetooth bluetooth /sys/module/board_mahimahi/parameters/bdaddr
-    setprop ro.bt.bdaddr_path /sys/module/board_mahimahi/parameters/bdaddr
+    chown bluetooth bluetooth /sys/module/board_supersonic/parameters/bdaddress
+    setprop ro.bt.bdaddr_path /sys/module/board_supersonic/parameters/bdaddress
 
     chown system system /sys/module/serial/parameters/modem_enabled
     chown system system /dev/ttyHSUSB0
@@ -150,7 +150,7 @@ on property:service.ser2net.enable=1
 on property:service.ser2net.enable=0
     stop srv_ser2net
 
-service hciattach /system/bin/brcm_patchram_plus --enable_hci --enable_lpm \
+service hciattach /system/bin/brcm_patchram_plus --enable_hci \
     --baudrate 3000000 --patchram /etc/firmware/bcm4329.hcd /dev/ttyHS0
     user bluetooth
     group bluetooth net_bt_admin
