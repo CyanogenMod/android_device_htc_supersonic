@@ -75,6 +75,12 @@ PRODUCT_COPY_FILES += \
     device/htc/supersonic/supersonic-keypad.kcm.bin:system/usr/keychars/supersonic-keypad.kcm.bin \
     device/htc/supersonic/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl
 
+# Firmware
+PRODUCT_COPY_FILES += \
+    device/htc/supersonic/firmware/bcm4329.hcd:system/etc/firmware/bcm4329.hcd \
+    device/htc/supersonic/firmware/fw_bcm4329.bin:system/etc/firmware/fw_bcm4329.bin \
+    device/htc/supersonic/firmware/fw_bcm4329_apsta.bin:system/etc/firmware/fw_bcm4329_apsta.bin
+
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
