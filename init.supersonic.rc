@@ -51,10 +51,6 @@ on boot
 # Overwrite framework low memory killer minfree setting
     write /sys/module/lowmemorykiller/parameters/minfree 3584,4096,6144,7168,7680,8192
 
-# Enable low memory killer to check file pages
-    write /sys/module/lowmemorykiller/parameters/minfile 0,0,0,5120,5632,6144
-    write /sys/module/lowmemorykiller/parameters/check_filepages 1
-
 service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant \
     -Dwext -ieth0 -c/data/misc/wifi/wpa_supplicant.conf
 #   we will start as root and wpa_supplicant will switch to user wifi
