@@ -79,22 +79,9 @@
     <!-- Each camcorder profile defines a set of predefined configuration parameters -->
     <CamcorderProfiles>
 
-        <EncoderProfile quality="high" fileFormat="mp4" duration="120">
-            <Video codec="m4v"
-                   bitRate="6000000"
-                   width="1280"
-                   height="720"
-                   frameRate="30" />
-
-            <Audio codec="amrnb"
-                   bitRate="12200"
-                   sampleRate="8000"
-                   channels="1" />
-        </EncoderProfile>
-
-        <EncoderProfile quality="low" fileFormat="mp4" duration="120">
+        <EncoderProfile quality="high" fileFormat="mp4" duration="60">
             <Video codec="h264"
-                   bitRate="6000000"
+                   bitRate="3000000"
                    width="720"
                    height="480"
                    frameRate="30" />
@@ -103,6 +90,20 @@
                    bitRate="12200"
                    sampleRate="8000"
                    channels="1" />
+        </EncoderProfile>
+
+        <EncoderProfile quality="low" fileFormat="mp4" duration="30">
+            <Video codec="m4v"
+                   bitRate="1600000"
+                   width="320"
+                   height="240"
+                   frameRate="15" />
+
+            <Audio codec="amrnb"
+                   bitRate="12200"
+                   sampleRate="8000"
+                   channels="1" />
+
         </EncoderProfile>
 
         <ImageEncoding quality="90" />
