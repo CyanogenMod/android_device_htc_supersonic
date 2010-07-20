@@ -6,7 +6,7 @@ rild.libpath=/system/lib/libhtc_ril.so
 ro.ril.def.preferred.network = 4
 ro.telephony.default_network = 4
 wifi.interface = eth0
-wifi.supplicant_scan_interval=45
+wifi.supplicant_scan_interval=15
 ro.com.android.dataroaming = true
 ro.com.google.locationfeatures = 1
 # density in DPI of the LCD of this board. This is used to scale the UI
@@ -31,4 +31,11 @@ ro.phone_storage = 1
 
 # This is a high density device with more memory, so larger vm heaps for it.
 dalvik.vm.heapsize=24m
+
+gsm.sim.operator.numeric = 0
+gsm.sim.operator.alpha = 0
+gsm.sim.operator.iso-country = 0
+
+#Modify MTU from 1500 to 1472 on 3G network
+ro.ril.set.mtu1472 = 1
 
