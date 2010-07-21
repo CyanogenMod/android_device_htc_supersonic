@@ -22,24 +22,6 @@
 -->
 
 <!-- use empty string to specify no proxy or port -->
-<!-- This version must agree with that in apps/common/res/apns.xml -->
-<apns version="6">
-    <apn carrier="Android"
-        mcc="310"
-        mnc="995"
-        apn="internet"
-        user="*"
-        server="*"
-        password="*"
-        mmsc="null"
-    />
-    <!--apn carrier="TelKila"
-        mcc="310"
-        mnc="260"
-        apn="internet"
-        user="*"
-        server="*"
-        password="*"
-        mmsc="null"
-    /-->
+  <apn carrier="CDMA" mcc="310" mnc="120" apn="0" port="" mmsproxy="" mmsport="" mmsc="" type="*"/>
+  <apn carrier="CDMA" mcc="310" mnc="120" apn="1" port="" mmsproxy="" mmsport="" mmsc="http://mms.sprintpcs.com" />  
 </apns>
