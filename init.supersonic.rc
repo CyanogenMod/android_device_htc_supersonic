@@ -51,10 +51,6 @@ on boot
 # Overwrite framework low memory killer minfree setting
     write /sys/module/lowmemorykiller/parameters/minfree 3584,4096,6144,7168,7680,8192
 
-    write /proc/sys/kernel/sched_latency_ns 5000000
-    write /proc/sys/kernel/sched_wakeup_granularity_ns 100000
-    write /proc/sys/kernel/sched_min_granularity_ns 100000
-
 service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant \
     -Dwext -ieth0 -c/data/misc/wifi/wpa_supplicant.conf
 #   we will start as root and wpa_supplicant will switch to user wifi
