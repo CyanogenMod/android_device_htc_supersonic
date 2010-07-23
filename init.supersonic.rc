@@ -146,7 +146,7 @@ on property:service.ser2net.enable=1
 on property:service.ser2net.enable=0
     stop srv_ser2net
 
-service hciattach /system/bin/brcm_patchram_plus --enable_hci \
+service hciattach /system/bin/brcm_patchram_plus --enable_hci --enable_lpm \
     --baudrate 3000000 --patchram /etc/firmware/bcm4329.hcd /dev/ttyHS0
     user bluetooth
     group bluetooth net_bt_admin
