@@ -41,7 +41,6 @@ adb pull /system/lib/egl/libGLESv1_CM_adreno200.so ../../../vendor/htc/$DEVICE/p
 adb pull /system/lib/egl/libGLESv2_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/egl/libq3dtools_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libOmxVdec.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libOmxVidEnc.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libcamera.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libgps.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libgsl.so ../../../vendor/htc/$DEVICE/proprietary
@@ -102,7 +101,6 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libGLESv2_adreno200.so:/system/lib/egl/libGLESv2_adreno200.so \\
     vendor/htc/__DEVICE__/proprietary/libq3dtools_adreno200.so:/system/lib/egl/libq3dtools_adreno200.so \\
     vendor/htc/__DEVICE__/proprietary/libOmxVdec.so:/system/lib/libOmxVdec.so \\
-    vendor/htc/__DEVICE__/proprietary/libOmxVidEnc.so:/system/lib/libOmxVidEnc.so \\
     vendor/htc/__DEVICE__/proprietary/libcamera.so:/system/lib/libcamera.so \\
     vendor/htc/__DEVICE__/proprietary/libgps.so:/system/lib/libgps.so \\
     vendor/htc/__DEVICE__/proprietary/libgsl.so:/system/lib/libgsl.so \\
