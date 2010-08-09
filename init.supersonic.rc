@@ -44,6 +44,9 @@ on boot
     chown radio radio /sys/module/msm_flashlight/parameters/phone_status
     chown system system /sys/class/leds/wimax/brightness
 
+    # flashlight
+    chown system system /sys/devices/platform/flashlight.0/leds/flashlight/brightness
+
     # For FM radio/music by Welly_Fang's request
     mkdir /data/data/shared
     chmod 0777 /data/data/shared
