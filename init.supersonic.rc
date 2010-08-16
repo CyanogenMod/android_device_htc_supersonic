@@ -40,7 +40,8 @@ on boot
     chown system system /sys/class/leds/wimax/brightness
 
     # flashlight
-    chown system system /sys/devices/platform/flashlight.0/leds/flashlight/brightness
+    chown system camera /sys/devices/platform/flashlight.0/leds/flashlight/brightness
+    chmod 0660          /sys/devices/platform/flashlight.0/leds/flashlight/brightness
 
     # For FM radio/music by Welly_Fang's request
     mkdir /data/data/shared
