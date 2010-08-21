@@ -29,7 +29,8 @@ endif # TARGET_KERNEL_CONFIG
 endif # TARGET_PREBUILT_KERNEL
 
 # The gps config appropriate for this device
-$(call inherit-product, device/common/gps/gps_us_supl.mk)
+PRODUCT_COPY_FILES += \
+    device/htc/supersonic/gps.conf:system/etc/gps.conf
 
 ## (1) First, the most specific values, i.e. the aspects that are specific to GSM
 
