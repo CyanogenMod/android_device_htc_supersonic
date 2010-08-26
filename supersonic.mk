@@ -21,13 +21,6 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-# Kernel Targets
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-ifeq ($(TARGET_KERNEL_CONFIG),)
-TARGET_PREBUILT_KERNEL := device/htc/supersonic/kernel
-endif # TARGET_KERNEL_CONFIG
-endif # TARGET_PREBUILT_KERNEL
-
 # The gps config appropriate for this device
 PRODUCT_COPY_FILES += \
     device/htc/supersonic/gps.conf:system/etc/gps.conf
@@ -96,6 +89,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/supersonic/bcm4329.ko:system/lib/modules/bcm4329.ko \
     device/htc/supersonic/sequans_sdio.ko:system/lib/modules/sequans_sdio.ko
+
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+LOCAL_KERNEL := device/htc/supersonic/kernel
+else
+LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel
 
 $(call inherit-product-if-exists, vendor/htc/supersonic/supersonic-vendor.mk)
 
