@@ -65,9 +65,6 @@ BOARD_EGL_CFG := device/htc/supersonic/egl.cfg
 
 BOARD_USES_QCOM_LIBS := true
 
-# For HTC's USB implementation
-BOARD_USE_HTC_USB_FUNCTION_SWITCH := true
-
 # # cat /proc/mtd
 # dev:    size   erasesize  name
 # mtd0: 00c00000 00020000 "wimax"
