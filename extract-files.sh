@@ -53,6 +53,19 @@ adb pull /system/lib/libpvasfcommon.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libpvasflocalpb.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libpvasflocalpbreg.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libspeech.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/wimaxDumpKmsg ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/apph ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/wimaxDumpLogcat ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/setWiMAXPropDaemond ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/wimax_mtd ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/sequansd ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/getWiMAXPropDaemond ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/wimaxDumpLastKmsg ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/wimaxDhcpRenew ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/wimaxDhcpRelease ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/wimaxAddRoute ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/wimax/sequansd/DefaultTree.xml ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/wimax/sequansd/sequansd_app.xml ../../../vendor/htc/$DEVICE/proprietary
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g > ../../../vendor/htc/$DEVICE/$DEVICE-vendor-blobs.mk
 # Copyright (C) 2010 The Android Open Source Project
@@ -112,8 +125,20 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libpvasfcommon.so:/system/lib/libpvasfcommon.so \\
     vendor/htc/__DEVICE__/proprietary/libpvasflocalpb.so:/system/lib/libpvasflocalpb.so \\
     vendor/htc/__DEVICE__/proprietary/libpvasflocalpbreg.so:/system/lib/libpvasflocalpbreg.so \\
-    vendor/htc/__DEVICE__/proprietary/libspeech.so:/system/lib/libspeech.so
-
+    vendor/htc/__DEVICE__/proprietary/libspeech.so:/system/lib/libspeech.so \\
+    vendor/htc/__DEVICE__/proprietary/wimaxDumpKmsg:/system/bin/wimaxDumpKmsg \\
+    vendor/htc/__DEVICE__/proprietary/apph:/system/bin/apph \\
+    vendor/htc/__DEVICE__/proprietary/wimaxDumpLogcat:/system/bin/wimaxDumpLogcat \\
+    vendor/htc/__DEVICE__/proprietary/setWiMAXPropDaemond:/system/bin/setWiMAXPropDaemond \\
+    vendor/htc/__DEVICE__/proprietary/wimax_mtd:/system/bin/wimax_mtd \\
+    vendor/htc/__DEVICE__/proprietary/sequansd:/system/bin/sequansd \\
+    vendor/htc/__DEVICE__/proprietary/getWiMAXPropDaemond:/system/bin/getWiMAXPropDaemond \\
+    vendor/htc/__DEVICE__/proprietary/wimaxDumpLastKmsg:/system/bin/wimaxDumpLastKmsg \\
+    vendor/htc/__DEVICE__/proprietary/wimaxDhcpRenew:/system/bin/wimaxDhcpRenew \\
+    vendor/htc/__DEVICE__/proprietary/wimaxDhcpRelease:/system/bin/wimaxDhcpRelease \\
+    vendor/htc/__DEVICE__/proprietary/wimaxAddRoute:/system/bin/wimaxAddRoute \\
+    vendor/htc/__DEVICE__/proprietary/DefaultTree.xml:/system/etc/wimax/sequansd \\
+    vendor/htc/__DEVICE__/proprietary/sequansd_app.xml:/system/etc/wimax/sequansd
 EOF
 
 ./setup-makefiles.sh
