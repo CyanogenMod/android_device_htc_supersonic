@@ -65,6 +65,8 @@ BOARD_EGL_CFG := device/htc/supersonic/egl.cfg
 
 BOARD_USES_QCOM_LIBS := true
 
+BOARD_USE_OPENSSL_ENGINE := true
+
 # # cat /proc/mtd
 # dev:    size   erasesize  name
 # mtd0: 00c00000 00020000 "wimax"
