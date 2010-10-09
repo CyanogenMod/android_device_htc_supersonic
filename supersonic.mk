@@ -62,7 +62,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     librs_jni \
-    sensors.supersonic
+    sensors.supersonic \
+    lights.supersonic
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
