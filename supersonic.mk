@@ -42,7 +42,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.setupwizard.enable_bypass=1 \
 	ro.media.dec.jpeg.memcap=20000000 \
 	dalvik.vm.lockprof.threshold=500 \
-	dalvik.vm.dexopt-flags=m=y
+	dalvik.vm.dexopt-flags=m=y \
+	ro.opengles.version=131072
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/supersonic/overlay
 
