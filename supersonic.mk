@@ -88,37 +88,6 @@ PRODUCT_COPY_FILES += \
     device/htc/supersonic/vold.fstab:system/etc/vold.fstab \
     device/htc/supersonic/apns-conf.xml:system/etc/apns-conf.xml
 
-# Kernel modules
-PRODUCT_COPY_FILES += \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/net/sunrpc/sunrpc.ko:system/lib/modules/2.6.34.5-cyanogenmod/kernel/net/sunrpc/sunrpc.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/net/sunrpc/auth_gss/rpcsec_gss_krb5.ko:system/lib/modules/2.6.34.5-cyanogenmod/kernel/net/sunrpc/auth_gss/rpcsec_gss_krb5.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/net/sunrpc/auth_gss/auth_rpcgss.ko:system/lib/modules/2.6.34.5-cyanogenmod/kernel/net/sunrpc/auth_gss/auth_rpcgss.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/net/ipv6/xfrm6_mode_transport.ko:system/lib/modules/2.6.34.5-cyanogenmod/kernel/net/ipv6/xfrm6_mode_transport.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/net/ipv6/tunnel6.ko:system/lib/modules/2.6.34.5-cyanogenmod/kernel/net/ipv6/tunnel6.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/net/ipv6/ah6.ko:system/lib/modules/2.6.34.5-cyanogenmod/kernel/net/ipv6/ah6.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/net/ipv6/ipv6.ko:system/lib/modules/2.6.34.5-cyanogenmod/kernel/net/ipv6/ipv6.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/net/ipv6/xfrm6_mode_tunnel.ko:system/lib/modules/2.6.34.5-cyanogenmod/kernel/net/ipv6/xfrm6_mode_tunnel.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/net/ipv6/ip6_tunnel.ko:system/lib/modules/2.6.34.5-cyanogenmod/kernel/net/ipv6/ip6_tunnel.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/net/ipv6/xfrm6_tunnel.ko:system/lib/modules/2.6.34.5-cyanogenmod/kernel/net/ipv6/xfrm6_tunnel.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/net/ipv6/sit.ko:system/lib/modules/2.6.34.5-cyanogenmod/kernel/net/ipv6/sit.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/net/ipv6/mip6.ko:system/lib/modules/2.6.34.5-cyanogenmod/kernel/net/ipv6/mip6.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/net/ipv6/xfrm6_mode_beet.ko:system/lib/modules/2.6.34.5-cyanogenmod/kernel/net/ipv6/xfrm6_mode_beet.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/net/ipv6/ipcomp6.ko:system/lib/modules/2.6.34.5-cyanogenmod/kernel/net/ipv6/ipcomp6.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/net/ipv6/esp6.ko:system/lib/modules/2.6.34.5-cyanogenmod/kernel/net/ipv6/esp6.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/fs/nfs_common/nfs_acl.ko:system/lib/modules/2.6.34.5-cyanogenmod/kernel/fs/nfs_common/nfs_acl.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/fs/jbd2/jbd2.ko:system/lib/modules/2.6.34.5-cyanogenmod/kernel/fs/jbd2/jbd2.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/fs/ext4/ext4.ko:system/lib/modules/2.6.34.5-cyanogenmod/kernel/fs/ext4/ext4.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/fs/exportfs/exportfs.ko:system/lib/modules/2.6.34.5-cyanogenmod/kernel/fs/exportfs/exportfs.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/fs/lockd/lockd.ko:system/lib/modules/2.6.34.5-cyanogenmod/kernel/fs/lockd/lockd.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/fs/nfsd/nfsd.ko:system/lib/modules/2.6.34.5-cyanogenmod/kernel/fs/nfsd/nfsd.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/fs/cifs/cifs.ko:system/lib/modules/2.6.34.5-cyanogenmod/kernel/fs/cifs/cifs.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/fs/fuse/fuse.ko:system/lib/modules/2.6.34.5-cyanogenmod/kernel/fs/fuse/fuse.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/fs/mbcache.ko:system/lib/modules/2.6.34.5-cyanogenmod/kernel/fs/mbcache.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/fs/nfs/nfs.ko:system/lib/modules/2.6.34.5-cyanogenmod/kernel/fs/nfs/nfs.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/drivers/net/wireless/bcm4329/bcm4329.ko:system/lib/modules/bcm4329.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/kernel/drivers/net/wimax/SQN/sequans_sdio.ko:system/lib/modules/sequans_sdio.ko \
-    device/htc/supersonic/modules/2.6.34.5-cyanogenmod/modules.dep:system/lib/modules/2.6.34.5-cyanogenmod/modules.dep
-
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 LOCAL_KERNEL := device/htc/supersonic/kernel
 else
