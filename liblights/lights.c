@@ -173,8 +173,6 @@ set_wimax_light_locked(struct light_device_t* dev,
         write_int(WIMAX_FILE, 3);
     } else if (amber && blink) {
         write_int(WIMAX_FILE, 5);
-    } else if (blink) {
-        write_int(WIMAX_FILE, 3);
     } else {
         write_int(WIMAX_FILE, 0);
     }
