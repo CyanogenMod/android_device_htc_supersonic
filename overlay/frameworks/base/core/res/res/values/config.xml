@@ -20,6 +20,13 @@
 <!-- These resources are around just to allow their values to be customized
      for different hardware and product builds. -->
 <resources>
+
+    <!-- Flag indicating whether the surface flinger has limited
+         alpha compositing functionality in hardware.  If set, the window
+         manager will disable alpha trasformation in animations where not
+         strictly needed. -->
+    <bool name="config_sf_limitedAlpha">true</bool>
+
     <!-- Flag indicating whether we should enable the automatic brightness in Settings.
          config_hardware_automatic_brightness_available is not set, so we will use software implementation -->
     <bool name="config_automatic_brightness_available">true</bool>
@@ -42,11 +49,11 @@
         <item>41</item>
         <item>91</item>
         <item>161</item>
-		<item>226</item>
-		<item>321</item>
-		<item>641</item>
-		<item>1281</item>
-		<item>2601</item>
+        <item>226</item>
+        <item>321</item>
+        <item>641</item>
+        <item>1281</item>
+        <item>2601</item>
     </integer-array>
 
     <!-- Array of output values for LCD backlight corresponding to the LUX values
@@ -58,12 +65,12 @@
         <item>89</item>
         <item>126</item>
         <item>164</item>
-		<item>164</item>
-		<item>164</item>
-		<item>187</item>
-		<item>210</item>
-		<item>233</item>
-		<item>255</item>
+        <item>164</item>
+        <item>164</item>
+        <item>187</item>
+        <item>210</item>
+        <item>233</item>
+        <item>255</item>
     </integer-array>
 
     <!-- Array of output values for button backlight corresponding to the LUX values
@@ -74,13 +81,13 @@
         <item>255</item>
         <item>255</item>
         <item>255</item>
-		<item>255</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
+        <item>255</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
     </integer-array>
 
     <!-- Array of output values for keyboard backlight corresponding to the LUX values
@@ -131,7 +138,7 @@
          [associated radio-type],[priority]  -->
     <string-array translatable="false" name="networkAttributes">
         <item>"wifi,1,1,1"</item>
-        <item>"wimax,6,2,0"</item>		
+        <item>"wimax,6,2,0"</item>
         <item>"mobile,0,0,0"</item>
         <item>"mobile_mms,2,0,2"</item>
         <item>"mobile_supl,3,0,2"</item>
@@ -183,9 +190,5 @@
     <!-- Component name of the default wallpaper. This will be ImageWallpaper if not 
          specified -->
     <string name="default_wallpaper_component">com.android.wallpaper/.nexus.NexusWallpaper</string>
-
-    <!-- Handle notifications differently if device only uses an amber/green
-	 LED. This also needs a liblights module that enables them accordingly. -->
-    <bool name="config_amber_green_light">true</bool>
 
 </resources>
