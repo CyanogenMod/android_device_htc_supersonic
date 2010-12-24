@@ -64,7 +64,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     librs_jni \
     sensors.supersonic \
-    lights.supersonic
+    lights.supersonic \
+    gralloc.qsd8k \
+    copybit.qsd8k \
+    gps.supersonic \
+    libOmxCore \
+    libOmxVidEnc
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
@@ -88,6 +93,9 @@ PRODUCT_COPY_FILES += \
     device/htc/supersonic/vold.fstab:system/etc/vold.fstab \
     device/htc/supersonic/apns-conf.xml:system/etc/apns-conf.xml
 
+PRODUCT_COPY_FILES += \
+    device/htc/supersonic/bcm4329.ko:system/lib/modules/bcm4329.ko
+
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 LOCAL_KERNEL := device/htc/supersonic/kernel
 else
@@ -108,5 +116,5 @@ $(call inherit-product, device/htc/common/common.mk)
 $(call inherit-product, build/target/product/full.mk)
 
 
-PRODUCT_NAME := generic_supersonic
+PRODUCT_NAME := htc_supersonic
 PRODUCT_DEVICE := supersonic

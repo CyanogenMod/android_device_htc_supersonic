@@ -43,6 +43,12 @@ on boot
     chown system camera /sys/devices/platform/flashlight.0/leds/flashlight/brightness
     chmod 0660          /sys/devices/platform/flashlight.0/leds/flashlight/brightness
 
+    # Camera status
+    chown radio system /sys/camera_led_status/led_ril_status
+    chown system system /sys/camera_led_status/led_wimax_status
+    chown system system /sys/camera_led_status/led_hotspot_status
+    chown media system /sys/android_camera/cam_mode
+
     # For FM radio/music by Welly_Fang's request
     mkdir /data/data/shared
     chmod 0777 /data/data/shared

@@ -68,6 +68,14 @@ BOARD_USES_QCOM_LIBS := true
 
 BOARD_USE_OPENSSL_ENGINE := true
 
+BOARD_USE_FROYO_LIBCAMERA := true
+
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := supersonic
+BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 1240
+
+# Use RGB565 surfaces until userspace drivers are upgraded
+BOARD_NO_RGBX_8888 := true
+
 # # cat /proc/mtd
 # dev:    size   erasesize  name
 # mtd0: 00c00000 00020000 "wimax"
@@ -84,8 +92,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x1aba0000
 
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-TARGET_RECOVERY_UI_LIB := librecovery_ui_supersonic librecovery_ui_htc
-
+#TARGET_RECOVERY_UI_LIB := librecovery_ui_supersonic librecovery_ui_htc
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
 TARGET_PREBUILT_KERNEL := device/htc/supersonic/kernel
