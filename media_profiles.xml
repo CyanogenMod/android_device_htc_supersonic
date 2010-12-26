@@ -77,14 +77,14 @@
 -->
 <MediaSettings>
     <!-- Each camcorder profile defines a set of predefined configuration parameters -->
-    <CamcorderProfiles>
+    <CamcorderProfiles cameraId="0">
 
         <EncoderProfile quality="high" fileFormat="mp4" duration="60">
-            <Video codec="m4v"
-                   bitRate="6000000"
-                   width="1280"
-                   height="720"
-                   frameRate="30" />
+            <Video codec="h264"
+                   bitRate="3000000"
+                   width="720"
+                   height="480"
+                   frameRate="24" />
 
             <Audio codec="amrnb"
                    bitRate="12200"
@@ -106,31 +106,46 @@
 
         </EncoderProfile>
 
-        <!--
-        <EncoderProfile quality="front" fileFormat="mp4" duration="60">
-            <Video codec="h264"
-                   bitRate="2000000"
-                   width="640"
-                   height="480"
-                   frameRate="24" />
+        <ImageEncoding quality="90" />
+        <ImageEncoding quality="80" />
+        <ImageEncoding quality="70" />
+    </CamcorderProfiles>
+
+    <CamcorderProfiles cameraId="1">
+        <EncoderProfile quality="high" fileFormat="mp4" duration="60">
+                <Video codec="h264"
+                        bitRate="2000000"
+                        width="640"
+                        height="480"
+                        frameRate="24" />
+
+                <Audio codec="amrnb"
+                        bitRate="12200"
+                        sampleRate="8000"
+                        channels="1" />
+        </EncoderProfile>
+
+        <EncoderProfile quality="low" fileFormat="3gp" duration="30">
+            <Video codec="m4v"
+                   bitRate="256000"
+                   width="176"
+                   height="144"
+                   frameRate="15" />
 
             <Audio codec="amrnb"
                    bitRate="12200"
                    sampleRate="8000"
                    channels="1" />
-        
         </EncoderProfile>
-        -->
 
         <ImageEncoding quality="90" />
         <ImageEncoding quality="80" />
         <ImageEncoding quality="70" />
-        <ImageDecoding memCap="20000000" />
+
+        <ImageDecoding memCap="10000000" />
 
         <Camera previewFrameRate="0" />
-
     </CamcorderProfiles>
-
 
     <EncoderOutputFileFormat name="3gp" />
     <EncoderOutputFileFormat name="mp4" />
