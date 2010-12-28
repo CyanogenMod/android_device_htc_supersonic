@@ -56,7 +56,6 @@ BOARD_KERNEL_BASE := 0x20000000
 
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_HAVE_FM_RADIO := true
 
 BOARD_VENDOR_QCOM_AMSS_VERSION := 3200
 
@@ -75,6 +74,9 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 1240
 
 # Use RGB565 surfaces until userspace drivers are upgraded
 BOARD_NO_RGBX_8888 := true
+
+BOARD_HAVE_FM_RADIO := true
+BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 
 # # cat /proc/mtd
 # dev:    size   erasesize  name
