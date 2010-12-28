@@ -94,6 +94,9 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x1aba0000
 
 BOARD_FLASH_BLOCK_SIZE := 131072
 
+# Force use of power button in recovery for Supersonic
+BOARD_HAS_NO_SELECT_BUTTON := 1
+
 #TARGET_RECOVERY_UI_LIB := librecovery_ui_supersonic librecovery_ui_htc
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
