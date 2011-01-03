@@ -19,8 +19,6 @@
 # not specialized for any geography.
 #
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
 # The gps config appropriate for this device
 PRODUCT_COPY_FILES += \
     device/htc/supersonic/gps.conf:system/etc/gps.conf
@@ -116,7 +114,7 @@ $(call inherit-product, device/htc/supersonic/media_a1026.mk)
 # stuff common to all HTC phones
 $(call inherit-product, device/htc/common/common.mk)
 
-$(call inherit-product, build/target/product/full.mk)
+$(call inherit-product, build/target/product/full_base.mk)
 
 
 PRODUCT_NAME := htc_supersonic
