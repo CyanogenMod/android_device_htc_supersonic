@@ -103,18 +103,6 @@ PRODUCT_COPY_FILES += \
     device/htc/supersonic/modules/2.6.35.10-cyanogenmod/kernel/fs/nfsd/nfsd.ko:system/lib/modules/2.6.35.10-cyanogenmod/kernel/fs/nfsd/nfsd.ko \
     device/htc/supersonic/modules/2.6.35.10-cyanogenmod/kernel/fs/mbcache.ko:system/lib/modules/2.6.35.10-cyanogenmod/kernel/fs/mbcache.ko \
     device/htc/supersonic/modules/2.6.35.10-cyanogenmod/kernel/fs/nfs/nfs.ko:system/lib/modules/2.6.35.10-cyanogenmod/kernel/fs/nfs/nfs.ko \
-    device/htc/supersonic/modules/2.6.35.10-cyanogenmod/kernel/net/ipv6/ipv6.ko:system/lib/modules/2.6.35.10-cyanogenmod/kernel/net/ipv6/ipv6.ko \
-    device/htc/supersonic/modules/2.6.35.10-cyanogenmod/kernel/net/ipv6/ah6.ko:system/lib/modules/2.6.35.10-cyanogenmod/kernel/net/ipv6/ah6.ko \
-    device/htc/supersonic/modules/2.6.35.10-cyanogenmod/kernel/net/ipv6/xfrm6_tunnel.ko:system/lib/modules/2.6.35.10-cyanogenmod/kernel/net/ipv6/xfrm6_tunnel.ko \
-    device/htc/supersonic/modules/2.6.35.10-cyanogenmod/kernel/net/ipv6/xfrm6_mode_transport.ko:system/lib/modules/2.6.35.10-cyanogenmod/kernel/net/ipv6/xfrm6_mode_transport.ko \
-    device/htc/supersonic/modules/2.6.35.10-cyanogenmod/kernel/net/ipv6/ip6_tunnel.ko:system/lib/modules/2.6.35.10-cyanogenmod/kernel/net/ipv6/ip6_tunnel.ko \
-    device/htc/supersonic/modules/2.6.35.10-cyanogenmod/kernel/net/ipv6/xfrm6_mode_tunnel.ko:system/lib/modules/2.6.35.10-cyanogenmod/kernel/net/ipv6/xfrm6_mode_tunnel.ko \
-    device/htc/supersonic/modules/2.6.35.10-cyanogenmod/kernel/net/ipv6/esp6.ko:system/lib/modules/2.6.35.10-cyanogenmod/kernel/net/ipv6/esp6.ko \
-    device/htc/supersonic/modules/2.6.35.10-cyanogenmod/kernel/net/ipv6/sit.ko:system/lib/modules/2.6.35.10-cyanogenmod/kernel/net/ipv6/sit.ko \
-    device/htc/supersonic/modules/2.6.35.10-cyanogenmod/kernel/net/ipv6/ipcomp6.ko:system/lib/modules/2.6.35.10-cyanogenmod/kernel/net/ipv6/ipcomp6.ko \
-    device/htc/supersonic/modules/2.6.35.10-cyanogenmod/kernel/net/ipv6/xfrm6_mode_beet.ko:system/lib/modules/2.6.35.10-cyanogenmod/kernel/net/ipv6/xfrm6_mode_beet.ko \
-    device/htc/supersonic/modules/2.6.35.10-cyanogenmod/kernel/net/ipv6/mip6.ko:system/lib/modules/2.6.35.10-cyanogenmod/kernel/net/ipv6/mip6.ko \
-    device/htc/supersonic/modules/2.6.35.10-cyanogenmod/kernel/net/ipv6/tunnel6.ko:system/lib/modules/2.6.35.10-cyanogenmod/kernel/net/ipv6/tunnel6.ko \
     device/htc/supersonic/modules/2.6.35.10-cyanogenmod/kernel/net/sunrpc/sunrpc.ko:system/lib/modules/2.6.35.10-cyanogenmod/kernel/net/sunrpc/sunrpc.ko \
     device/htc/supersonic/modules/2.6.35.10-cyanogenmod/kernel/net/sunrpc/auth_gss/auth_rpcgss.ko:system/lib/modules/2.6.35.10-cyanogenmod/kernel/net/sunrpc/auth_gss/auth_rpcgss.ko \
     device/htc/supersonic/modules/2.6.35.10-cyanogenmod/kernel/net/sunrpc/auth_gss/rpcsec_gss_krb5.ko:system/lib/modules/2.6.35.10-cyanogenmod/kernel/net/sunrpc/auth_gss/rpcsec_gss_krb5.ko \
