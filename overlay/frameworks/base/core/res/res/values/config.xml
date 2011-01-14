@@ -191,4 +191,7 @@
          specified -->
     <string name="default_wallpaper_component">com.android.wallpaper/.nexus.NexusWallpaper</string>
 
+    <!-- Enable use of power animations -->
+    <bool name="config_animateScreenLights">false</bool>
+
 </resources>
