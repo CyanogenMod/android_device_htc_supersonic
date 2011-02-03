@@ -138,7 +138,7 @@
          [associated radio-type],[priority]  -->
     <string-array translatable="false" name="networkAttributes">
         <item>"wifi,1,1,1"</item>
-        <item>"wimax,6,2,0"</item>
+        <item>"wimax,6,6,2"</item>
         <item>"mobile,0,0,0"</item>
         <item>"mobile_mms,2,0,2"</item>
         <item>"mobile_supl,3,0,2"</item>
@@ -152,7 +152,7 @@
     <!-- An Array of "[ConnectivityManager connectionType],
                       [# simultaneous connection types]"  -->
     <string-array translatable="false" name="radioAttributes">
-        <item>"2,1"</item>
+        <item>"6,1"</item>
         <item>"1,1"</item>
         <item>"0,1"</item>
     </string-array>
@@ -169,6 +169,7 @@
     <string-array translatable="false" name="config_tether_upstream_regexs">
         <item>"rmnet\\d"</item>
         <item>"eth\\d"</item>
+        <item>"wimax\\d"</item>
     </string-array>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable

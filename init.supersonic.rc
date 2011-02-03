@@ -121,7 +121,37 @@ service sequansd /system/bin/sequansd /etc/wimax/sequansd/sequansd_app.xml
     disabled
     oneshot
 
+service wimaxDhcpRelease /system/bin/wimaxDhcpRelease
+    user root
+    group root
+    disabled
+    oneshot
+
 service wimaxDhcpRenew /system/bin/wimaxDhcpRenew
+    user root
+    group root
+    disabled
+    oneshot
+
+service wimaxAddRoute /system/bin/wimaxAddRoute
+    user root
+    group root
+    disabled
+    oneshot
+
+service wimaxDumpLogcat /system/bin/wimaxDumpLogcat /data/wimax/log
+    user root
+    group root
+    disabled
+    oneshot
+
+service wimaxDumpKmsg /system/bin/wimaxDumpKmsg /data/wimax/log
+    user root
+    group root
+    disabled
+    oneshot
+
+service wimaxDumpLastKmsg /system/bin/wimaxDumpLastKmsg /data/wimax/log
     user root
     group root
     disabled
