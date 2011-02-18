@@ -80,6 +80,8 @@ BOARD_NO_RGBX_8888 := true
 BOARD_HAVE_FM_RADIO := true
 BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 
+BOARD_HAVE_SQN_WIMAX := true
+
 # # cat /proc/mtd
 # dev:    size   erasesize  name
 # mtd0: 00c00000 00020000 "wimax"

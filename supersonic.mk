@@ -93,6 +93,9 @@ PRODUCT_COPY_FILES += \
     device/htc/supersonic/modules/bcm4329.ko:system/lib/modules/bcm4329.ko \
     device/htc/supersonic/modules/sequans_sdio.ko:system/lib/modules/sequans_sdio.ko
 
+PRODUCT_COPY_FILES += \
+    device/htc/supersonic/libcryp98.so:system/lib/libcryp98.so
+
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 LOCAL_KERNEL := device/htc/supersonic/kernel
 else

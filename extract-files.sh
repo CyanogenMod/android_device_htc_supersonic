@@ -121,8 +121,7 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/wimaxDhcp.conf:/system/etc/wimax/dhcp/wimaxDhcp.conf \\
     vendor/htc/__DEVICE__/proprietary/ipd:/system/bin/ipd \\
     vendor/htc/__DEVICE__/proprietary/ip:/system/bin/ip \\
-    vendor/htc/__DEVICE__/proprietary/sequansd_app.xml:/system/etc/wimax/sequansd/sequansd_app.xml \\
-    vendor/htc/__DEVICE__/proprietary/libcryp98.so:/system/lib/libcryp98.so
+    vendor/htc/__DEVICE__/proprietary/sequansd_app.xml:/system/etc/wimax/sequansd/sequansd_app.xml
 EOF
 
 ./setup-makefiles.sh
