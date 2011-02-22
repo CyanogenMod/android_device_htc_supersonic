@@ -65,6 +65,7 @@ BOARD_EGL_CFG := device/htc/supersonic/egl.cfg
 
 BOARD_USES_QCOM_LIBS := true
 BOARD_USES_QCOM_GPS := true
+BOARD_USES_QCOM_LIBRPC := true
 
 BOARD_USE_OPENSSL_ENGINE := true
 
