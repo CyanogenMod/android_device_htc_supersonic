@@ -25,7 +25,6 @@ adb pull /system/etc/AdieHWCodecSetting.csv ../../../vendor/htc/$DEVICE/propriet
 adb pull /system/etc/AudioBTID.csv ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/TPA2018.csv ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/WPDB.zip ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/agps_rm ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/firmware/Supersonic_20100204_Sprint_Jack_324016_v2.acdb ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/firmware/default.acdb ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/firmware/yamato_pfp.fw ../../../vendor/htc/$DEVICE/proprietary
@@ -90,7 +89,6 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/AudioBTID.csv:/system/etc/AudioBTID.csv \\
     vendor/htc/__DEVICE__/proprietary/TPA2018.csv:/system/etc/TPA2018.csv \\
     vendor/htc/__DEVICE__/proprietary/WPDB.zip:/system/etc/WPDB.zip \\
-    vendor/htc/__DEVICE__/proprietary/agps_rm:/system/etc/agps_rm \\
     vendor/htc/__DEVICE__/proprietary/Supersonic_20100204_Sprint_Jack_324016_v2.acdb:/system/etc/firmware/Supersonic_20100204_Sprint_Jack_324016_v2.acdb \\
     vendor/htc/__DEVICE__/proprietary/default.acdb:/system/etc/firmware/default.acdb \\
     vendor/htc/__DEVICE__/proprietary/yamato_pfp.fw:/system/etc/firmware/yamato_pfp.fw \\
