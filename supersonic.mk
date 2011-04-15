@@ -67,8 +67,7 @@ PRODUCT_PACKAGES += \
     copybit.qsd8k \
     gps.supersonic \
     libOmxCore \
-    libOmxVidEnc \
-    libOmxVdec
+    libOmxVidEnc
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
