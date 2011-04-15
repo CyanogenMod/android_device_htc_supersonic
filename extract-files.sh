@@ -29,12 +29,11 @@ adb pull /system/etc/firmware/Supersonic_20100204_Sprint_Jack_324016_v2.acdb ../
 adb pull /system/etc/firmware/default.acdb ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/firmware/yamato_pfp.fw ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/firmware/yamato_pm4.fw ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/permissions/com.sprint.hardware.twincamdevice.xml ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/framework/com.sprint.hardware.twinCamDevice.jar ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/egl/libEGL_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/egl/libGLESv1_CM_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/egl/libGLESv2_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/egl/libq3dtools_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/hw/gps.supersonic.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libcamera.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libgsl.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libhtc_acoustic.so ../../../vendor/htc/$DEVICE/proprietary
@@ -90,10 +89,9 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/WPDB.zip:/system/etc/WPDB.zip \\
     vendor/htc/__DEVICE__/proprietary/Supersonic_20100204_Sprint_Jack_324016_v2.acdb:/system/etc/firmware/Supersonic_20100204_Sprint_Jack_324016_v2.acdb \\
     vendor/htc/__DEVICE__/proprietary/default.acdb:/system/etc/firmware/default.acdb \\
+    vendor/htc/__DEVICE__/proprietary/gps.supersonic.so:/system/lib/hw/gps.supersonic.so \\
     vendor/htc/__DEVICE__/proprietary/yamato_pfp.fw:/system/etc/firmware/yamato_pfp.fw \\
     vendor/htc/__DEVICE__/proprietary/yamato_pm4.fw:/system/etc/firmware/yamato_pm4.fw \\
-    vendor/htc/__DEVICE__/proprietary/com.sprint.hardware.twincamdevice.xml:/system/etc/permissions/com.sprint.hardware.twincamdevice.xml \\
-    vendor/htc/__DEVICE__/proprietary/com.sprint.hardware.twinCamDevice.jar:/system/framework/com.sprint.hardware.twinCamDevice.jar \\
     vendor/htc/__DEVICE__/proprietary/libEGL_adreno200.so:/system/lib/egl/libEGL_adreno200.so \\
     vendor/htc/__DEVICE__/proprietary/libGLESv1_CM_adreno200.so:/system/lib/egl/libGLESv1_CM_adreno200.so \\
     vendor/htc/__DEVICE__/proprietary/libGLESv2_adreno200.so:/system/lib/egl/libGLESv2_adreno200.so \\
