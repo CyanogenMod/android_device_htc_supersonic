@@ -43,4 +43,4 @@ ro.ril.set.mtu1472 = 1
 # Make cdma voicemail the default voicemail number.
 ro.cdma.voicemail.number = mine
 
-mobiledata.interfaces=rmnet0,eth0,gprs,ppp0,wimax0
+mobiledata.interfaces=rmnet0,gprs,ppp0,wimax0
