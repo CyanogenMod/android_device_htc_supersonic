@@ -22,6 +22,6 @@
 -->
 <apns version="6">
 <!-- use empty string to specify no proxy or port -->
-  <apn carrier="CDMA" mcc="310" mnc="120" apn="0" port="" mmsproxy="" mmsport="" mmsc="" type="*"/>
-  <apn carrier="CDMA" mcc="310" mnc="120" apn="1" port="" mmsproxy="" mmsport="" mmsc="http://mms.sprintpcs.com" />
+  <apn carrier="CDMA" mcc="310" mnc="120" apn="0" port="80" mmsproxy="68.28.31.7" mmsport="" mmsc="" type="mms"/>
+  <apn carrier="CDMA" mcc="310" mnc="120" apn="1" port="80" mmsproxy="68.28.31.7" mmsport="" mmsc="http://mms.sprintpcs.com" protocol="IPV4" roaming_protocol="IPV4" type="mms" />
 </apns>
