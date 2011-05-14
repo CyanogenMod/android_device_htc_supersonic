@@ -195,6 +195,10 @@
     <!-- Enable use of power animations -->
     <bool name="config_animateScreenLights">false</bool>
 
+    <!-- If this value is true, The mms content-disposition field is supported correctly.
+         If false, Content-disposition fragments are ignored -->
+    <bool name="config_mms_content_disposition_support">false</bool>
+
     <!-- Set and Unsets WiMAX -->
     <bool name="config_wimaxEnabled">true</bool>
     <!-- Location of the wimax framwork jar location -->
