@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- Create entries to cover both LEDs -->
+	<string-array name="entries_dual_led_colors" translatable="false">
+		<item>@string/trackball_color_entry_green_speaker</item>
+		<item>@string/trackball_color_entry_amber_speaker</item>
+		<item>@string/trackball_color_entry_green_wimax</item>
+		<item>@string/trackball_color_entry_red_wimax</item>
+		<item>@string/trackball_color_entry_amber_wimax</item>
+		<item>@string/trackball_color_entry_none</item>
+	</string-array>
+
+	<string-array name="values_dual_led_colors" translatable="false">
+		<!-- the speaker LEDs are the colors w/ blue added -->
+		<item>#00ffff</item>
+		<item>#ff00ff</item>
+		<!-- the wimax LEDs are normal colors -->
+		<item>#00ff00</item>
+		<item>#ff0000</item>
+		<item>#ffff00</item>
+		<item>none</item>
+	</string-array>
+</resources>
