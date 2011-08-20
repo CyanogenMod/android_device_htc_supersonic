@@ -2,4 +2,7 @@
 <resources>
     <!-- Whether or not to display the trackball settings -->
     <bool name="has_trackball">false</bool>
+    
+    <!-- We're going to override the available color choices to provide support for both LEDs -->
+    <bool name="has_dual_notification_led">true</bool>
 </resources>

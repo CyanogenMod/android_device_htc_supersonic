@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<add-resource type="string" name="trackball_color_entry_green_wimax" />
+	<add-resource type="string" name="trackball_color_entry_amber_wimax" />
+	<add-resource type="string" name="trackball_color_entry_red_wimax" />
+	<add-resource type="string" name="trackball_color_entry_green_speaker" />
+	<add-resource type="string" name="trackball_color_entry_amber_speaker" />
+
+	<string name="trackball_color_entry_green_wimax">Green (right)</string>
+	<string name="trackball_color_entry_amber_wimax">Amber (right)</string>
+	<string name="trackball_color_entry_red_wimax">Green/Red Alternating (right)</string>
+	<string name="trackball_color_entry_green_speaker">Green (left)</string>
+	<string name="trackball_color_entry_amber_speaker">Amber (left)</string>
+</resources>

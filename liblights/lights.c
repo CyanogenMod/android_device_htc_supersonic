@@ -103,13 +103,6 @@ is_lit(struct light_state_t const* state)
 }
 
 static int
-handle_trackball_light_locked(struct light_device_t* dev)
-{
-    //no trackball light for inc
-    return 0;
-}
-
-static int
 rgb_to_brightness(struct light_state_t const* state)
 {
     int color = state->color & 0x00ffffff;
@@ -147,35 +140,88 @@ static int
 set_wimax_light_locked(struct light_device_t* dev,
         struct light_state_t const* state)
 {
-    int blink;
-    int green, amber, blue;
+    int red, green, blue;
+    int blink, onMS = 0, offMS = 0;
     unsigned int colorRGB;
-
+	
     switch (state->flashMode) {
         case LIGHT_FLASH_NONE:
             blink = 0;
             break;
-        default:
+		case LIGHT_FLASH_TIMED:
+			blink = 1;
+			onMS = state->flashOnMS;
+			offMS = state->flashOffMS;
+			break;
+		default:
             blink = 1;
             break;
     }
-
+	
     colorRGB = state->color;
-
-    amber = (colorRGB >> 16) & 0xFF;
+	
+    LOGD("set_wimax_light_locked colorRGB=%08X, blink=%d\n",
+		 colorRGB, blink);
+	
+    red = (colorRGB >> 16) & 0xFF;
     green = (colorRGB >> 8) & 0xFF;
-    blue  = colorRGB & 0xFF;
-
-    LOGD("set_wimax_light_locked colorRGB=%08X, green=%d, amber=%d blue=%d flashMode=%d\n",
-            colorRGB, green, amber, blue, state->flashMode);
-
-    if ((green || blue) && blink) {
-        write_int(WIMAX_FILE, 3);
-    } else if (amber && blink) {
-        write_int(WIMAX_FILE, 5);
-    } else {
-        write_int(WIMAX_FILE, 0);
-    }
+    blue = colorRGB & 0xFF;
+	
+	// green wimax = green [00FF00] - can flash 2xfast [low onMS, offMS < onMS],
+	//                                fast [low onMS, offMS >= onMS], slow, solid
+	// amber wimax = yellow [FFFF00] - can flash slow [any blink], solid
+	// red wimax = red [FF0000] - can be solid; can flash w/ green [any blink]
+	
+	/* wimax brightness values:
+	 1 = Two quick green flashes
+	 2 = One quick green flash
+	 3 = One slow green flash
+	 4 = One slow green flash then one slow red flash
+	 5 = One slow yellow flash
+	 129 = Solid red on
+	 130 = Solid green on
+	 131 = Solid yellow on
+	 */
+	
+	if (!blue) // any blue = not wimax LED
+	{
+		if (!red && green)
+		{
+			// green LED
+			if (blink)
+			{
+				// extra options could be added to control this in cmparts
+				if (onMS > 0 && onMS <= 750 && offMS < onMS)
+					write_int(WIMAX_FILE, 1);
+				else if(onMS > 0 && onMS <= 750)
+					write_int(WIMAX_FILE, 2);
+				else
+					write_int(WIMAX_FILE, 3);
+			}
+			else
+				write_int(WIMAX_FILE, 130);
+		}
+		else if (red && green)
+		{
+			// amber LED
+			if (blink)
+				write_int(WIMAX_FILE, 5);
+			else
+				write_int(WIMAX_FILE, 131);
+		}
+		else if (red)
+		{
+			// red LED
+			if (blink)
+				write_int(WIMAX_FILE, 4);
+			else
+				write_int(WIMAX_FILE, 129);
+		}
+		else
+			write_int(WIMAX_FILE, 0);
+	}
+	else
+		write_int(WIMAX_FILE, 0);
 
     return 0;
 }
@@ -184,61 +230,62 @@ static int
 set_speaker_light_locked(struct light_device_t* dev,
         struct light_state_t const* state)
 {
-    int len;
-    int alpha, red, green, blue;
-    int blink, freq, pwm;
-    int onMS, offMS;
+    int red, green, blue;
+    int blink;
     unsigned int colorRGB;
 
     switch (state->flashMode) {
-        case LIGHT_FLASH_TIMED:
-            blink = 1;
-            onMS = state->flashOnMS;
-            offMS = state->flashOffMS;
-            break;
-        case LIGHT_FLASH_HARDWARE:
-            blink = 1;
-            onMS = state->flashOnMS;
-            offMS = state->flashOffMS;
-            break;
         case LIGHT_FLASH_NONE:
             blink = 0;
-            onMS = 0;
-            offMS = 0;
             break;
-        default:
+		default:
             blink = 1;
-            onMS = 0;
-            offMS = 0;
             break;
     }
 
     colorRGB = state->color;
 
-    LOGD("set_speaker_light_locked colorRGB=%08X, onMS=%d, offMS=%d\n",
-            colorRGB, onMS, offMS);
-
+    LOGD("set_speaker_light_locked colorRGB=%08X, blink=%d\n",
+		 colorRGB, blink);
+	
     red = (colorRGB >> 16) & 0xFF;
     green = (colorRGB >> 8) & 0xFF;
     blue = colorRGB & 0xFF;
 
-    if (red) {
-        write_int(GREEN_LED_FILE, 0);
-        write_int(AMBER_LED_FILE, 1);
-        if (blink) {
-             //blink must come after brightness change
-             write_int(AMBER_BLINK_FILE, 1);
-        }
-    } else if (green || blue) {
+	// specifying blue in the color puts it on the speaker LED, otherwise, same color codes
+	// green speaker = green w/ blue [00FFFF]
+	// amber speaker = yellow or red w/blue [FF00FF] [FFFFFF]
+	
+	if (blue || state == &g_battery)
+	{
+		if (red)
+		{
+			write_int(GREEN_LED_FILE, 0);
+			write_int(AMBER_LED_FILE, 1);
+			if (blink)
+				//blink must come after brightness change
+				write_int(AMBER_BLINK_FILE, 1);
+		}
+		else if(green)
+		{
+			write_int(AMBER_LED_FILE, 0);
+			write_int(GREEN_LED_FILE, 1);
+			if (blink)
+				write_int(GREEN_BLINK_FILE, 1);
+		}
+		else
+		{
+			// nothing lit
+			write_int(GREEN_LED_FILE, 0);
+			write_int(AMBER_LED_FILE, 0);
+		}
+	}
+	else
+	{
+		// nothing lit
+		write_int(GREEN_LED_FILE, 0);
         write_int(AMBER_LED_FILE, 0);
-        write_int(GREEN_LED_FILE, 1);
-        if (blink) {
-             write_int(GREEN_BLINK_FILE, 1);
-        }
-    } else {
-        write_int(GREEN_LED_FILE, 0);
-        write_int(AMBER_LED_FILE, 0);
-    }
+	}
 
     return 0;
 }
@@ -246,22 +293,33 @@ set_speaker_light_locked(struct light_device_t* dev,
 static void
 handle_speaker_light_locked(struct light_device_t* dev)
 {
-    set_speaker_light_locked(dev, &g_battery);
+	if(is_lit(&g_battery) && g_battery.flashMode != LIGHT_FLASH_NONE)
+		set_speaker_light_locked(dev, &g_battery);
+	else
+		set_speaker_light_locked(dev, &g_notification);
+
 }
 
 static void
-handle_notification_light_locked(struct light_device_t* dev)
+handle_wimax_light_locked(struct light_device_t* dev)
 {
-    set_wimax_light_locked(dev, &g_notification);
+	if(is_lit(&g_battery) && g_battery.flashMode == LIGHT_FLASH_NONE)
+		set_wimax_light_locked(dev, &g_battery);
+	else
+		set_wimax_light_locked(dev, &g_notification);
 }
 
 static int
 set_light_battery(struct light_device_t* dev,
         struct light_state_t const* state)
 {
-    pthread_mutex_lock(&g_lock);
+	pthread_mutex_lock(&g_lock);
     g_battery = *state;
-    handle_speaker_light_locked(dev);
+	// we'll send battery to the wimax LED, we can get tri-state color there
+	// so we get solid red for charging low battery, solid amber for charging mid-range, and solid green for charged
+	// we still blink the speaker amber LED for low battery though, as it's more noticable
+	handle_speaker_light_locked(dev);
+	handle_wimax_light_locked(dev);
     pthread_mutex_unlock(&g_lock);
     return 0;
 }
@@ -272,7 +330,8 @@ set_light_notifications(struct light_device_t* dev,
 {
     pthread_mutex_lock(&g_lock);
     g_notification = *state;
-    handle_notification_light_locked(dev);
+	handle_speaker_light_locked(dev);
+    handle_wimax_light_locked(dev);
     pthread_mutex_unlock(&g_lock);
     return 0;
 }
