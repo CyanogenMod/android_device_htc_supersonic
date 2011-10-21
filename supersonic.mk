@@ -67,7 +67,6 @@ PRODUCT_PACKAGES += \
     lights.supersonic \
     gralloc.qsd8k \
     copybit.qsd8k \
-    gps.supersonic \
     libOmxCore \
     libOmxVidEnc \
     com.android.future.usb.accessory
