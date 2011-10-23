@@ -33,15 +33,16 @@ $(call inherit-product-if-exists, vendor/htc/supersonic/supersonic-vendor.mk)
 
 ## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.com.google.clientidbase=android-sprint-us \
-	ro.com.google.locationfeatures=1 \
-	ro.cdma.home.operator.numeric=310120 \
-	ro.cdma.home.operator.alpha=Sprint \
-	ro.setupwizard.enable_bypass=1 \
-	ro.media.dec.jpeg.memcap=20000000 \
-	dalvik.vm.lockprof.threshold=500 \
-	dalvik.vm.dexopt-flags=m=y \
-	ro.opengles.version=131072
+    ro.com.google.clientidbase=android-sprint-us \
+    ro.com.google.locationfeatures=1 \
+    ro.cdma.home.operator.numeric=310120 \
+    ro.cdma.home.operator.alpha=Sprint \
+    ro.setupwizard.enable_bypass=1 \
+    ro.media.dec.jpeg.memcap=20000000 \
+    dalvik.vm.lockprof.threshold=500 \
+    dalvik.vm.dexopt-flags=m=y \
+    ro.opengles.version=131072 \
+    ro.vold.umsdirtyratio=20
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/supersonic/overlay
 
