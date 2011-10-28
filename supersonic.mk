@@ -85,9 +85,6 @@ PRODUCT_COPY_FILES += \
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
-# Supersonic uses high-density artwork where available
-PRODUCT_LOCALES += hdpi
-
 PRODUCT_COPY_FILES += \
     device/htc/supersonic/vold.fstab:system/etc/vold.fstab \
     device/htc/supersonic/apns-conf.xml:system/etc/apns-conf.xml
@@ -118,6 +115,8 @@ $(call inherit-product, device/htc/common/common.mk)
 
 $(call inherit-product, build/target/product/full_base.mk)
 
+# Supersonic uses high-density artwork where available
+PRODUCT_LOCALES += hdpi
 
 PRODUCT_NAME := htc_supersonic
 PRODUCT_DEVICE := supersonic
