@@ -43,6 +43,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	dalvik.vm.dexopt-flags=m=y \
 	ro.opengles.version=131072
 
+# Don't set /proc/sys/vm/dirty_ratio to 0 when USB mounting
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vold.umsdirtyratio=20
+
 DEVICE_PACKAGE_OVERLAYS += device/htc/supersonic/overlay
 
 PRODUCT_COPY_FILES += \
