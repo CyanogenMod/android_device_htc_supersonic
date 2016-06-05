@@ -21,7 +21,14 @@
      a PRODUCT_COPY_FILES line in the sdk section of the toplevel Makefile.
 -->
 <apns version="6">
-<!-- use empty string to specify no proxy or port -->
-  <apn carrier="CDMA" mcc="310" mnc="120" apn="0" port="" mmsproxy="" mmsport="" mmsc="" type="*"/>
-  <apn carrier="CDMA" mcc="310" mnc="120" apn="1" port="" mmsproxy="" mmsport="" mmsc="http://mms.sprintpcs.com" />
+    <apn carrier="Sprint"
+         mcc="310"
+         mnc="120"
+         apn="Sprint"
+         user="Sprint"
+         server="*"
+         password="*"
+         mmsc="http://mms.sprintpcs.com"
+         authtype="3"
+    />
 </apns>

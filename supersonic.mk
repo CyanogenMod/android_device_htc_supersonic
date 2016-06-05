@@ -19,8 +19,6 @@
 # not specialized for any geography.
 #
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
 # The gps config appropriate for this device
 PRODUCT_COPY_FILES += \
     device/htc/supersonic/gps.conf:system/etc/gps.conf
@@ -50,12 +48,14 @@ DEVICE_PACKAGE_OVERLAYS += device/htc/supersonic/overlay
 PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/base/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+    frameworks/base/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
     frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
-    frameworks/base/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml
+    frameworks/base/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
+    frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml
 
 # media config xml file
 PRODUCT_COPY_FILES += \
@@ -64,7 +64,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     librs_jni \
     sensors.supersonic \
-    lights.supersonic
+    lights.supersonic \
+    gralloc.qsd8k \
+    copybit.qsd8k \
+    gps.supersonic \
+    libOmxCore \
+    libOmxVidEnc \
+    com.android.future.usb.accessory
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
@@ -74,19 +80,21 @@ PRODUCT_COPY_FILES += \
 
 # Firmware
 PRODUCT_COPY_FILES += \
-    device/htc/supersonic/firmware/bcm4329.hcd:system/etc/firmware/bcm4329.hcd \
-    device/htc/supersonic/firmware/fw_bcm4329.bin:system/etc/firmware/fw_bcm4329.bin \
-    device/htc/supersonic/firmware/fw_bcm4329_apsta.bin:system/etc/firmware/fw_bcm4329_apsta.bin
+    device/htc/supersonic/firmware/bcm4329.hcd:system/etc/firmware/bcm4329.hcd
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
-# Supersonic uses high-density artwork where available
-PRODUCT_LOCALES += hdpi
-
 PRODUCT_COPY_FILES += \
     device/htc/supersonic/vold.fstab:system/etc/vold.fstab \
     device/htc/supersonic/apns-conf.xml:system/etc/apns-conf.xml
+
+PRODUCT_COPY_FILES += \
+    device/htc/supersonic/modules/bcm4329.ko:system/lib/modules/bcm4329.ko \
+    device/htc/supersonic/modules/sequans_sdio.ko:system/lib/modules/sequans_sdio.ko
+
+PRODUCT_COPY_FILES += \
+    device/htc/supersonic/prebuilt/libcryp98.so:system/lib/libcryp98.so
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 LOCAL_KERNEL := device/htc/supersonic/kernel
@@ -105,8 +113,10 @@ $(call inherit-product, device/htc/supersonic/media_a1026.mk)
 # stuff common to all HTC phones
 $(call inherit-product, device/htc/common/common.mk)
 
-$(call inherit-product, build/target/product/full.mk)
+$(call inherit-product, build/target/product/full_base.mk)
 
+# Supersonic uses high-density artwork where available
+PRODUCT_LOCALES += hdpi
 
-PRODUCT_NAME := generic_supersonic
+PRODUCT_NAME := htc_supersonic
 PRODUCT_DEVICE := supersonic
